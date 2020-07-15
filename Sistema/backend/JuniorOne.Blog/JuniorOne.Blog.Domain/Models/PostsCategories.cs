@@ -1,7 +1,4 @@
 ﻿using JuniorOne.Blog.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace JuniorOne.Blog.Domain.Models
 {

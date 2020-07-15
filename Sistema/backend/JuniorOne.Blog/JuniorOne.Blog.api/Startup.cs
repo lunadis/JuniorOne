@@ -1,15 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using JuniorOne.Blog.Infra;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace JuniorOne.Blog.api
@@ -28,8 +22,9 @@ namespace JuniorOne.Blog.api
         {
             Bootstrap.RegisterServices(services, Configuration);
             services.AddControllers();
-            services.AddSwaggerGen(swagger => swagger.SwaggerDoc(name: "v1", 
-                                                      new OpenApiInfo {
+            services.AddSwaggerGen(swagger => swagger.SwaggerDoc(name: "v1",
+                                                      new OpenApiInfo
+                                                      {
                                                           Title = "Junior On{e} Blog api",
                                                           Version = "v1"
                                                       }));

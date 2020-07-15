@@ -10,7 +10,7 @@ namespace JuniorOne.Blog.Data.Map
         {
             builder.ToTable(nameof(Post));
 
-            builder.HasKey(p => new { p.IdAuthor});
+            builder.HasKey(p => new { p.IdAuthor });
 
             builder.Property(p => p.Id)
                    .UseIdentityColumn();

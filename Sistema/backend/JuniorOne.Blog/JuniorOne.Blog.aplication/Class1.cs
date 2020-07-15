@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace JuniorOne.Blog.aplication
+﻿namespace JuniorOne.Blog.aplication
 {
     public class Class1
     {

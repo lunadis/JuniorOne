@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace JuniorOne.Blog.Domain.Interfaces
+﻿namespace JuniorOne.Blog.Domain.Interfaces
 {
     public interface IEntity
     {
