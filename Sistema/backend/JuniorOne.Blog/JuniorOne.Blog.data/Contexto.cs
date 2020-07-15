@@ -1,7 +1,6 @@
 ﻿using JuniorOne.Blog.Data.Map;
 using JuniorOne.Blog.Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace JuniorOne.Blog.data
 {
@@ -14,11 +13,9 @@ namespace JuniorOne.Blog.data
         public DbSet<Tag> Tags { get; set; }
         public DbSet<User> Users { get; set; }
 
-
-        protected Contexto(DbContextOptions<Contexto> options) :
+        public Contexto(DbContextOptions<Contexto> options) :
             base(options)
         {
-
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -29,7 +26,6 @@ namespace JuniorOne.Blog.data
             modelBuilder.ApplyConfiguration(new PostsTagsMap());
             modelBuilder.ApplyConfiguration(new TagMap());
             modelBuilder.ApplyConfiguration(new UserMap());
-
         }
     }
 }

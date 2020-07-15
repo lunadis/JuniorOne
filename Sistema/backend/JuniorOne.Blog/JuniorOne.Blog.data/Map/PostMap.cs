@@ -1,7 +1,6 @@
 ﻿using JuniorOne.Blog.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
 
 namespace JuniorOne.Blog.Data.Map
 {
@@ -9,7 +8,16 @@ namespace JuniorOne.Blog.Data.Map
     {
         public void Configure(EntityTypeBuilder<Post> builder)
         {
-            throw new NotImplementedException();
+            builder.ToTable(nameof(Post));
+
+            builder.HasKey(p => new { p.IdAuthor});
+
+            builder.Property(p => p.Id)
+                   .UseIdentityColumn();
+
+            builder.HasOne<User>(p => p.Author)
+                   .WithMany(u => u.Posts)
+                   .HasForeignKey(p => p.IdAuthor);
         }
     }
 }

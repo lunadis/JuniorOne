@@ -9,6 +9,6 @@ namespace JuniorOne.Blog.Domain.Models
     {
         public int Id { get; set; }
         public string Description { get; set; }
-        public IEnumerable<PostsCategories> Categories { get; set; }
+        public IEnumerable<PostsCategories> PostCategories { get; set; }
     }
 }
