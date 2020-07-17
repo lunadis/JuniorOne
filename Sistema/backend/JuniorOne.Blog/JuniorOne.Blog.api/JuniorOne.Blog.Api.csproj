@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\JuniorOne.Blog.aplication\JuniorOne.Blog.Aplication.csproj" />
     <ProjectReference Include="..\JuniorOne.Blog.Infra\JuniorOne.Blog.Infra.csproj" />
   </ItemGroup>
 

@@ -10,35 +10,35 @@ namespace JuniorOne.Blog.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class PostsTagsController : ControllerBase
     {
-        // GET: api/<UserController>
+        // GET: api/<PostsTagsController>
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/<UserController>/5
+        // GET api/<PostsTagsController>/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST api/<UserController>
+        // POST api/<PostsTagsController>
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT api/<UserController>/5
+        // PUT api/<PostsTagsController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE api/<UserController>/5
+        // DELETE api/<PostsTagsController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
