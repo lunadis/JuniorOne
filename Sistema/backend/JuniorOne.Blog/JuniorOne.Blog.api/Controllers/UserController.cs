@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using JuniorOne.Blog.Aplication.Interface;
+using JuniorOne.Blog.Aplication.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -12,36 +14,56 @@ namespace JuniorOne.Blog.Api.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        private readonly IUserAplication _app;
+
+        public UserController(IUserAplication app)
+        {
+            _app = app;
+        }
+
         // GET: api/<UserController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public ActionResult<IEnumerable<UserViewModel>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(_app.Index());
         }
 
         // GET api/<UserController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ActionResult<UserViewModel> Get(int id)
         {
-            return "value";
+            return Ok(_app.Select(id));
         }
 
         // POST api/<UserController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult Post([FromBody] UserViewModel value)
         {
+            var result = _app.Save(value);
+
+            if (result) return Ok();
+
+            return BadRequest();
         }
 
         // PUT api/<UserController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public ActionResult Put([FromBody] UserViewModel value)
         {
+            var result = _app.Update(value);
+            if (result) return Ok();
+
+            return BadRequest();
         }
 
         // DELETE api/<UserController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult<UserViewModel> Delete(int id)
         {
+            var result = _app.Delete(id);
+            if (result == null) return BadRequest();
+
+            return Ok();
         }
     }
 }
