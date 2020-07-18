@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using JuniorOne.Blog.Aplication.Interface;
 using JuniorOne.Blog.Aplication.ViewModel;
+using JuniorOne.Blog.Aplication.ViewModel.Tags;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860

@@ -1,3 +1,5 @@
+using AutoMapper;
+using JuniorOne.Blog.Aplication.Mapper;
 using JuniorOne.Blog.Infra;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,7 +23,10 @@ namespace JuniorOne.Blog.api
         public void ConfigureServices(IServiceCollection services)
         {
             Bootstrap.RegisterServices(services, Configuration);
-            services.AddControllers();
+            services.AddControllers()
+                .AddNewtonsoftJson(options => 
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            services.AddAutoMapper(typeof(MapperConfig));
             services.AddSwaggerGen(swagger => swagger.SwaggerDoc(name: "v1",
                                                       new OpenApiInfo
                                                       {

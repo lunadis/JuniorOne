@@ -4,11 +4,9 @@ using System.Text;
 
 namespace JuniorOne.Blog.Aplication.ViewModel
 {
-    public class TagsViewModel
+    public class CategoryViewModel
     {
         public int Id { get; set; }
-        public string TagName { get; set; }
-
-        public IEnumerable<PostsTagsViewModel> PostsTags { get; set; }
+        public string Description { get; set; }
     }
 }

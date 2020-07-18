@@ -1,6 +1,6 @@
-﻿using System;
+﻿using JuniorOne.Blog.Aplication.ViewModel.Usuarios;
+using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace JuniorOne.Blog.Aplication.ViewModel
 {
@@ -14,7 +14,7 @@ namespace JuniorOne.Blog.Aplication.ViewModel
         public DateTime Create_at { get; set; }
 
         public int IdAuthor { get; set; }
-        public UserViewModel Author { get; set; }
+        public UserAuthorPostViewModel Author { get; set; }
 
         public IEnumerable<PostsCategoriesViewModel> categories { get; set; }
         public IEnumerable<PostsTagsViewModel> PostsTags { get; set; }

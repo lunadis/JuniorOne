@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\JuniorOne.Blog.aplication\JuniorOne.Blog.Aplication.csproj" />
     <ProjectReference Include="..\JuniorOne.Blog.data\JuniorOne.Blog.Data.csproj" />
   </ItemGroup>
 
